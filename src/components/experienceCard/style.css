@@ -4,6 +4,7 @@
     position: relative;
     border: 2px dashed transparent;
     padding-top: 4px;
+    margin-bottom: 14px;
 }
 
 .dashed {

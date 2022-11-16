@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import Page from './components/page'
 import './App.css';
+import { PAGE_HEIGHT } from './constants';
 
 function App() {
   let cards = useSelector((state) => state.pages.cards)
@@ -12,7 +13,7 @@ function App() {
 
     for (let i = 0; i < cards.length; i++) {
       sum += cards[i].height
-      if (sum > 1024) {
+      if (sum > PAGE_HEIGHT) {
         pages.push(temp)        
         temp = []
         sum = cards[i].height
@@ -20,6 +21,8 @@ function App() {
       temp.push(cards[i])
     }
     pages.push(temp)
+
+    console.log(pages)
 
     return (
       <>

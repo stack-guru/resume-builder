@@ -7,11 +7,8 @@
     max-height: 29.7cm;
     min-width: 21cm;
     max-width: 21cm;
-    margin: auto;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 1cm auto;
     box-sizing: border-box;
-    margin-bottom: 1cm;
     word-break: break-word;
     page-break-after: always;
     line-height: normal;

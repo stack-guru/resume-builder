@@ -5,11 +5,14 @@ import './style.css'
 function CustomInput(props) {
     const fontStyle = `${ props.size === 'big' ? 'big-text color-text' : 'small-text'} ${props.align === 'center' && 'text-center'}`
 
-    const [text, setText] = useState(props.text)
     const [textAreaClass, setTextAreaClass] = useState(fontStyle)
 
     const changeStyle = focus => {
         focus ? setTextAreaClass(`${fontStyle} light-background`) : setTextAreaClass(`${fontStyle}`)
+    }
+
+    const handleChange = e => {
+        props.setText(e.target.value)
     }
 
     return (
@@ -17,8 +20,8 @@ function CustomInput(props) {
             <TextareaAutosize className={textAreaClass} 
                                 onFocus={() => changeStyle(true)}
                                 onBlur={() => changeStyle(false)}
-                                defaultValue={text}
-                                onChange={(e) => setText(e.target.value)}
+                                defaultValue={props.text}
+                                onChange={(e) => handleChange(e)}
                                 placeholder={props.placeholder}
                             />
         </div>

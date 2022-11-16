@@ -1,25 +1,37 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import CustomInput from '../customInput'
 import { FaPlusCircle } from "react-icons/fa"
 import { FaMinusCircle } from "react-icons/fa"
+import { addCard, removeCard, updateCard } from '../../reducers/slice'
 import './style.css'
 
-function ExperienceCard() {
+const margin = 14
+const border = 4
+
+function ExperienceCard({detail}) {
+    const dispatch = useDispatch()
+
     const [showBorder, setShowBorder] = useState(false)
-    
+    const ref = useRef()
+
+    const setText = (text, kind) => {
+        dispatch(updateCard({id: detail.id, kind, text, height: ref.current.clientHeight + margin + border}))
+    }
+
     return(
-        <div className={`experience-card ${showBorder && 'dashed'}`} onMouseOver={() => setShowBorder(true)} onMouseLeave={() => setShowBorder(false)}>
+        <div ref = {ref} className={`experience-card ${showBorder && 'dashed'}`} onMouseOver={() => setShowBorder(true)} onMouseLeave={() => setShowBorder(false)}>
             {showBorder && <div className='buttons'>
-                <span className='remove-button' onClick={() => console.log('remove')}>
+                <span className='remove-button' onClick={() => dispatch(removeCard(detail.id))}>
                     <FaMinusCircle />
                 </span>
-                <span className='add-button' onClick={() => console.log('add')}>
+                <span className='add-button' onClick={() => dispatch(addCard())}>
                     <FaPlusCircle />
                 </span>
             </div>}
-            <CustomInput text = '' size = 'small' align = 'left' placeholder="Company"/>
-            <CustomInput text = '' size = 'small' align = 'left' placeholder="Title"/>
-            <CustomInput text = '' size = 'small' align = 'left' placeholder="description"/>
+            <CustomInput text = {detail.company} size = 'small' align = 'left' placeholder="Company" setText = {(text) => setText(text, 'company')}/>
+            <CustomInput text = {detail.title} size = 'small' align = 'left' placeholder="Title" setText = {(text) => setText(text, 'title')}/>
+            <CustomInput text = {detail.description} size = 'small' align = 'left' placeholder="description" setText = {(text) => setText(text, 'description')}/>
         </div>
     )
 }
