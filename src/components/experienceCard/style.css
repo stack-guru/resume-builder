@@ -1,0 +1,30 @@
+.experience-card {
+    margin: auto;
+    width: 360px;
+    position: relative;
+    border: 2px dashed transparent;
+    padding-top: 4px;
+}
+
+.dashed {
+    border: 2px dashed #eee ;
+}
+
+.experience-card .buttons {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: -16px;
+}
+
+.experience-card .buttons span {
+    cursor: pointer;
+}
+
+.experience-card .add-button {
+    color: green;
+}
+
+.experience-card .remove-button {
+    color: red;
+}

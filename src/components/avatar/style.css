@@ -1,0 +1,8 @@
+#user_pic {
+    width: 120px;
+    height: 120px;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}

@@ -1,0 +1,6 @@
+.custom-input textarea {
+    border: 0;
+    resize: none;
+    outline: none;
+    min-width: 320px;
+}

@@ -1,0 +1,12 @@
+.title-container {
+    width: 360px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.title-container span {
+    font-size: 20px;
+}
+

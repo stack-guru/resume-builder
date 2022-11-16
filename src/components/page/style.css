@@ -1,0 +1,19 @@
+.page {
+    font-family: Spectral;
+    background: white;
+    box-shadow: rgb(0 0 0 / 10%) 0.1rem 0.1rem 1rem 0.1rem;
+    height: 29.7cm;
+    min-height: 29.7cm;
+    max-height: 29.7cm;
+    min-width: 21cm;
+    max-width: 21cm;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    margin-bottom: 1cm;
+    word-break: break-word;
+    page-break-after: always;
+    line-height: normal;
+    padding: 1.3cm;
+}

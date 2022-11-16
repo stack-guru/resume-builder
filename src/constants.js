@@ -1,0 +1,5 @@
+module.exports = {
+    PAGE_HEIGHT: 1024,
+    INFO_HEIGHT: 450,
+    NEW_EXPERIENCE_HEIGHT: 86
+}
