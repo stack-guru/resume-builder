@@ -16,22 +16,24 @@ function ExperienceCard({detail}) {
     const ref = useRef()
 
     const setText = (text, kind) => {
-        dispatch(updateCard({id: detail.id, kind, text, height: ref.current.clientHeight + margin + border}))
+        const height = ref.current.clientHeight + margin + border
+        
+        dispatch(updateCard({id: detail.id, kind, text, height}))
     }
-
+    
     return(
         <div ref = {ref} className={`experience-card ${showBorder && 'dashed'}`} onMouseOver={() => setShowBorder(true)} onMouseLeave={() => setShowBorder(false)}>
             {showBorder && <div className='buttons'>
-                <span className='remove-button' onClick={() => dispatch(removeCard(detail.id))}>
+                {detail.id !== 1 && <span className='remove-button' onClick={() => dispatch(removeCard(detail.id))}>
                     <FaMinusCircle />
-                </span>
-                <span className='add-button' onClick={() => dispatch(addCard())}>
+                </span>}
+                <span className='add-button' onClick={() => dispatch(addCard(detail.id))}>
                     <FaPlusCircle />
                 </span>
             </div>}
-            <CustomInput text = {detail.company} size = 'small' align = 'left' placeholder="Company" setText = {(text) => setText(text, 'company')}/>
-            <CustomInput text = {detail.title} size = 'small' align = 'left' placeholder="Title" setText = {(text) => setText(text, 'title')}/>
-            <CustomInput text = {detail.description} size = 'small' align = 'left' placeholder="description" setText = {(text) => setText(text, 'description')}/>
+            <CustomInput changable = {1} text = {detail.company} size = 'small' align = 'left' bottom={1} placeholder="Company" setText = {(text) => setText(text, 'company')}/>
+            <CustomInput changable = {1} text = {detail.title} size = 'small' align = 'left' bottom={1} placeholder="Title" setText = {(text) => setText(text, 'title')}/>
+            <CustomInput changable = {1} text = {detail.description} size = 'small' align = 'left' bottom={1} placeholder="description" setText = {(text) => setText(text, 'description')}/>
         </div>
     )
 }

@@ -45,3 +45,7 @@ code {
   position: relative;
   top: 3px;
 }
+
+.text-bottom {
+  border-bottom: 1px solid #efefef !important;
+}

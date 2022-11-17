@@ -11,6 +11,8 @@ function App() {
     let temp = []
     let sum = 0
 
+    console.log(cards)
+
     for (let i = 0; i < cards.length; i++) {
       sum += cards[i].height
       if (sum > PAGE_HEIGHT) {
@@ -21,8 +23,6 @@ function App() {
       temp.push(cards[i])
     }
     pages.push(temp)
-
-    console.log(pages)
 
     return (
       <>

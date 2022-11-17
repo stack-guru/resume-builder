@@ -2,9 +2,10 @@
     margin: auto;
     width: 360px;
     position: relative;
-    border: 2px dashed transparent;
     padding-top: 4px;
     margin-bottom: 14px;
+    border-top: 2px dashed transparent;
+    border-bottom: 1px solid rgb(0, 92, 134);
 }
 
 .dashed {

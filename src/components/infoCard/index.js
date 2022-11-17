@@ -19,7 +19,7 @@ function InfoCard() {
             <Title text="CONTACT" />
             <SocialInput icon = {<BsFillEnvelopeFill />} text = 'william.vic0019@gmail.com'/>
             <SocialInput icon = {<BsLinkedin />} text = '' placeholder='LinkedIn'/>
-            <SocialInput icon = {<BsTelephoneFill />} text = '' placeholder='Phone'/>
+            <SocialInput icon = {<BsTelephoneFill />} text = '' placeholder='Phone' phone = {1}/>
             <hr />
             <Title text="EXPERIENCE" />
         </div>

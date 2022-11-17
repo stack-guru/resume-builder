@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import experience from '../objects/experience'
 import info from '../objects/info'
 
@@ -20,12 +20,10 @@ export const pageSlice = createSlice({
         }
         return e
       })
-
-      console.log(state.cards)
     },
 
-    addCard: (state) => {
-      state.cards = [...state.cards, new experience(current(state).cards.length)]
+    addCard: (state, action) => {
+      state.cards.splice(state.cards.findIndex(e => e.id === action.payload) + 1, 0, new experience(state.cards.length))      
     },
 
     removeCard: (state, action) => {
