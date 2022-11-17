@@ -4,7 +4,9 @@ import CustomInput from '../customInput'
 import { FaPlusCircle } from "react-icons/fa"
 import { FaMinusCircle } from "react-icons/fa"
 import { addCard, removeCard, updateCard } from '../../reducers/slice'
+import { DatePicker } from 'antd'
 import './style.css'
+const { RangePicker  } = DatePicker
 
 const margin = 14
 const border = 4
@@ -34,6 +36,7 @@ function ExperienceCard({detail}) {
             <CustomInput changable = {1} text = {detail.company} size = 'small' align = 'left' bottom={1} placeholder="Company" setText = {(text) => setText(text, 'company')}/>
             <CustomInput changable = {1} text = {detail.title} size = 'small' align = 'left' bottom={1} placeholder="Title" setText = {(text) => setText(text, 'title')}/>
             <CustomInput changable = {1} text = {detail.description} size = 'small' align = 'left' bottom={1} placeholder="description" setText = {(text) => setText(text, 'description')}/>
+            <RangePicker picker='month' bordered={false}/>
         </div>
     )
 }

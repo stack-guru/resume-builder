@@ -49,3 +49,12 @@ code {
 .text-bottom {
   border-bottom: 1px solid #efefef !important;
 }
+
+.ant-picker-suffix {
+  display: none !important;
+}
+
+.ant-picker-input input {
+  width: 66px !important;
+  text-align: center;
+}
