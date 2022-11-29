@@ -1,5 +1,5 @@
 <h1>Resume Builder</h1>
-<p>This is a test. So I made it from scratch without any template.</p>
+<p>I made it from scratch without any template.</p>
 
 ## Available Scripts
 
